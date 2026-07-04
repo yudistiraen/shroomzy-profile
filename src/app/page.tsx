@@ -7,6 +7,7 @@ import FlavorMenu from "@/components/FlavorMenu";
 import Showcase from "@/components/Showcase";
 import Location from "@/components/Location";
 import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/next"
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <Location />
       </main>
       <Footer />
+      <Analytics/>
     </>
   );
 }
