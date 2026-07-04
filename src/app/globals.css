@@ -1,26 +1,122 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-cream: #fbf3e7;
+  --color-cream-soft: #f5ead9;
+  --color-ink: #2b1b12;
+  --color-ink-soft: #5a4636;
+  --color-chili: #d3491d;
+  --color-chili-dark: #a83712;
+  --color-spice: #e8a93a;
+  --color-herb: #52734d;
+  --color-tan: #efddbe;
+  --color-line: #e0cca4;
+
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-jakarta);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-cream: var(--color-cream);
+  --color-cream-soft: var(--color-cream-soft);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-chili: var(--color-chili);
+  --color-chili-dark: var(--color-chili-dark);
+  --color-spice: var(--color-spice);
+  --color-herb: var(--color-herb);
+  --color-tan: var(--color-tan);
+  --color-line: var(--color-line);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Grain texture overlay, layered on hero/section backgrounds via .grain */
+.grain {
+  position: relative;
+}
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Custom scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-chili) var(--color-cream-soft);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream-soft);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-chili);
+  border-radius: 999px;
+  border: 3px solid var(--color-cream-soft);
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-chili-dark);
+  background-clip: padding-box;
+}
+
+/* Focus visibility, non-negotiable across interactive elements */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-chili);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Hero CTA entrance, plain CSS so it never fights the buttons' own hover/active transforms */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-cta-group {
+  animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.9s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-cta-group {
+    animation: none;
+  }
 }
