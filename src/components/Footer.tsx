@@ -8,7 +8,7 @@ export default function Footer() {
           <p className="font-display italic text-chili">{business.name}</p>
           <p>
             © {new Date().getFullYear()} {business.fullName}. Dibuat dengan
-            resep rumahan dan kasih sayang di Depok.
+            resep rumahan dan kasih sayang.
           </p>
         </div>
 

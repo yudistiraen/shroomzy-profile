@@ -67,7 +67,7 @@ export default function Hero() {
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-16 px-6 md:grid-cols-2 md:px-10">
         <div>
           <p className="hero-eyebrow mb-5 inline-flex items-center gap-2 rounded-full border border-line bg-cream-soft px-4 py-1.5 text-xs font-bold uppercase tracking-[0.14em] text-ink-soft">
-            UMKM Jamur Crispy · Depok, Jawa Barat
+            UMKM Jamur Crispy · GDC - Depok, Jawa Barat
           </p>
 
           <h1 className="font-display text-[13vw] leading-[0.95] font-semibold tracking-[-0.03em] text-ink sm:text-6xl md:text-6xl lg:text-7xl">

@@ -60,7 +60,7 @@ export default function About() {
             Tentang Kami
           </p>
           <h2 className="about-reveal font-display text-4xl font-semibold tracking-[-0.03em] text-ink md:text-5xl">
-            Dari dapur rumahan, untuk pecinta jamur crispy di Depok dan sekitarnya.
+            Dari dapur rumahan, untuk pecinta jamur crispy di GDC dan sekitarnya.
           </h2>
         </div>
 

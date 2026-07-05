@@ -58,7 +58,7 @@ export default function Showcase() {
             Bukti Rasa
           </p>
           <h2 className="showcase-text font-display text-4xl font-semibold tracking-[-0.03em] text-ink md:text-5xl">
-            Rating sempurna, langsung dari pelanggan sekitar Depok.
+            Rating sempurna, langsung dari pelanggan sekitar GDC.
           </h2>
           <p className="showcase-text mt-6 max-w-md text-lg leading-[1.7] text-ink-soft">
             {business.name} tercatat dengan rating{" "}
